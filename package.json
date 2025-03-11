@@ -1,4 +1,19 @@
 {
+  "name": "beanheads-workspace",
+  "private": true,
+  "version": "0.3.3",
+  "workspaces": [
+    "core",
+    "site",
+    "demo",
+    "beanheads-visualizer"
+  ],
+  "scripts": {
+    "build:core": "cd core && npm run build",
+    "start:visualizer": "cd beanheads-visualizer && npm start",
+    "start:site": "cd site && npm start",
+    "publish-package": "cd core && npm publish"
+  },
   "dependencies": {
     "@types/styled-components": "^5.1.34",
     "styled-components": "^6.1.15"

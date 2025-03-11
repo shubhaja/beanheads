@@ -25,9 +25,16 @@
       "pre-commit": "tsdx lint"
     }
   },
-  "name": "beanheads",
+  "name": "@shubhaja/beanheads",
   "author": "Robert Broersma",
   "module": "dist/core.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubhaja/beanheads.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "devDependencies": {
     "@types/react": "^16.9.41",
     "@types/react-dom": "^16.9.8",
