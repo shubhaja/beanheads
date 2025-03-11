@@ -112,6 +112,7 @@ const mouthAnimationOptions = [
 const expressionAnimationOptions = [
   { value: "none", label: "None" },
   // Success levels
+  { value: "", label: "---- Success Levels ----", disabled: true },
   { value: "godlikeSuccess", label: "Godlike Success" },
   { value: "greatSuccess", label: "Great Success" },
   { value: "success", label: "Success" },
@@ -121,7 +122,19 @@ const expressionAnimationOptions = [
   { value: "failure", label: "Failure" },
   { value: "terribleFailure", label: "Terrible Failure" },
   { value: "tragicFailure", label: "Tragic Failure" },
+  // Talking Success Levels
+  { value: "", label: "---- Talking Success Levels ----", disabled: true },
+  { value: "godlikeSuccessTalk", label: "Godlike Success (Talking)" },
+  { value: "greatSuccessTalk", label: "Great Success (Talking)" },
+  { value: "successTalk", label: "Success (Talking)" },
+  { value: "mildSuccessTalk", label: "Mild Success (Talking)" },
+  { value: "neutralTalk", label: "Neutral (Talking)" },
+  { value: "mildFailureTalk", label: "Mild Failure (Talking)" },
+  { value: "failureTalk", label: "Failure (Talking)" },
+  { value: "terribleFailureTalk", label: "Terrible Failure (Talking)" },
+  { value: "tragicFailureTalk", label: "Tragic Failure (Talking)" },
   // Emotions
+  { value: "", label: "---- Emotions ----", disabled: true },
   { value: "happy", label: "Happy" },
   { value: "sad", label: "Sad" },
   { value: "angry", label: "Angry" },
@@ -130,6 +143,16 @@ const expressionAnimationOptions = [
   { value: "excited", label: "Excited" },
   { value: "love", label: "Love" },
   { value: "shocked", label: "Shocked" },
+  // Talking Emotions
+  { value: "", label: "---- Talking Emotions ----", disabled: true },
+  { value: "happyTalk", label: "Happy (Talking)" },
+  { value: "sadTalk", label: "Sad (Talking)" },
+  { value: "angryTalk", label: "Angry (Talking)" },
+  { value: "surprisedTalk", label: "Surprised (Talking)" },
+  { value: "confusedTalk", label: "Confused (Talking)" },
+  { value: "excitedTalk", label: "Excited (Talking)" },
+  { value: "loveTalk", label: "Love (Talking)" },
+  { value: "shockedTalk", label: "Shocked (Talking)" },
 ];
 
 const BeanHeadVisualizer = () => {
@@ -230,7 +253,7 @@ const Avatar = () => (
                   className="w-full p-2 border border-gray-300 rounded-md"
                 >
                   {expressionAnimationOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
+                    <option key={option.value || option.label} value={option.value} disabled={option.disabled}>
                       {option.label}
                     </option>
                   ))}
