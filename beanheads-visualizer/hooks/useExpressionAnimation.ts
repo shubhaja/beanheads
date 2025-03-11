@@ -24,6 +24,7 @@ export type ExpressionAnimationType =
   | "excited"
   | "love"
   | "shocked"
+  | "sleeping"
   | "godlikeSuccessTalk"
   | "greatSuccessTalk"
   | "successTalk"
@@ -209,6 +210,11 @@ const expressions: Record<string, ExpressionState> = {
     eyes: "dizzy",
     eyebrows: "raised",
     mouth: "open",
+  },
+  sleeping: {
+    eyes: "content", // Using content for closed eyes
+    eyebrows: "serious",
+    mouth: "serious",
   }
 };
 
@@ -778,6 +784,49 @@ export function useExpressionAnimation(animationType: ExpressionAnimationType = 
             
             // Dizzy eyes don't blink
           }, 200);
+          break;
+          
+        case "sleeping":
+          // Transition to sleeping state
+          setExpressionState(expressions.neutral);
+          
+          // First, close the eyes
+          addTimeout(() => {
+            setExpressionState({
+              ...expressions.neutral,
+              eyes: "content" // Eyes closed
+            });
+            
+            // Then, transition to the complete sleeping expression
+            addTimeout(() => {
+              setExpressionState(expressions.sleeping);
+              
+              // No blinking for sleeping (eyes are already closed)
+              // No talking for sleeping (as requested)
+              
+              // Add a gentle breathing animation to simulate sleeping
+              const startBreathing = () => {
+                // Subtle mouth variation for breathing effect
+                setExpressionState(prevState => ({
+                  ...prevState,
+                  mouth: "lips" // Slightly parted lips for breathing
+                }));
+                
+                addTimeout(() => {
+                  setExpressionState(prevState => ({
+                    ...prevState,
+                    mouth: "serious" // Back to normal mouth
+                  }));
+                  
+                  // Schedule next breath
+                  addTimeout(startBreathing, 2500 + Math.random() * 1000); // Variable breathing timing
+                }, 1500); // Duration of breath
+              };
+              
+              // Start breathing cycle after a delay
+              addTimeout(startBreathing, 1000);
+            }, 300);
+          }, 400);
           break;
           
         default:

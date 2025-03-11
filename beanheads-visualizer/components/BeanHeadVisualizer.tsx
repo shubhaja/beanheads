@@ -16,6 +16,8 @@ import { ModularBeanHead } from './ModularBeanHead';
 import { EyeAnimationType } from '../hooks/useEyeAnimation';
 import { MouthAnimationType } from '../hooks/useMouthAnimation';
 import { ExpressionAnimationType } from '../hooks/useExpressionAnimation';
+import { EmoteType } from '../hooks/useEmote';
+import { emoteOptions } from '../animations/emotes';
 
 // Create key-value pairs for dropdown options
 const createOptions = (obj: Record<string, any>) => {
@@ -143,6 +145,7 @@ const expressionAnimationOptions = [
   { value: "excited", label: "Excited" },
   { value: "love", label: "Love" },
   { value: "shocked", label: "Shocked" },
+  { value: "sleeping", label: "Sleeping" },
   // Talking Emotions
   { value: "", label: "---- Talking Emotions ----", disabled: true },
   { value: "happyTalk", label: "Happy (Talking)" },
@@ -160,6 +163,7 @@ const BeanHeadVisualizer = () => {
   const [eyeAnimation, setEyeAnimation] = useState<EyeAnimationType>("none");
   const [mouthAnimation, setMouthAnimation] = useState<MouthAnimationType>("none");
   const [expressionAnimation, setExpressionAnimation] = useState<ExpressionAnimationType>("none");
+  const [emoteType, setEmoteType] = useState<EmoteType>("none");
   const [reactCode, setReactCode] = useState<string>('');
   
   // Generate React code based on current props
@@ -195,6 +199,7 @@ const Avatar = () => (
     setEyeAnimation("none");
     setMouthAnimation("none");
     setExpressionAnimation("none");
+    setEmoteType("none");
     setOptions(getRandomOptions());
   };
   
@@ -226,6 +231,11 @@ const Avatar = () => (
     }
   };
   
+  // Handle emote type change
+  const handleEmoteTypeChange = (value: EmoteType) => {
+    setEmoteType(value);
+  };
+  
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6">BeanHead Visualizer</h1>
@@ -239,12 +249,28 @@ const Avatar = () => (
               eyeAnimation={eyeAnimation}
               mouthAnimation={mouthAnimation}
               expressionAnimation={expressionAnimation}
+              emoteType={emoteType}
             />
           </div>
           
           {/* Animation Controls */}
           <div className="mt-6 mb-6 w-full">
             <div className="grid grid-cols-1 gap-4 mb-6">
+              <div>
+                <label className="block text-lg font-medium mb-2">Emotes</label>
+                <select
+                  value={emoteType}
+                  onChange={(e) => handleEmoteTypeChange(e.target.value as EmoteType)}
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                >
+                  {emoteOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              
               <div>
                 <label className="block text-lg font-medium mb-2">Expression Animation</label>
                 <select

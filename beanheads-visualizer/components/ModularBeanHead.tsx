@@ -4,12 +4,15 @@ import { cn } from "../utils/cn";
 import { useEyeAnimation, EyeAnimationType } from "../hooks/useEyeAnimation";
 import { useMouthAnimation, MouthAnimationType } from "../hooks/useMouthAnimation";
 import { useExpressionAnimation, ExpressionAnimationType } from "../hooks/useExpressionAnimation";
+import { useEmote, EmoteType } from "../hooks/useEmote";
+import { EmoteComponent } from "./emotes/EmoteComponent";
 
 interface ModularBeanHeadProps {
   avatarProps: AvatarProps;
   eyeAnimation?: EyeAnimationType;
   mouthAnimation?: MouthAnimationType;
   expressionAnimation?: ExpressionAnimationType;
+  emoteType?: EmoteType;
   className?: string;
   containerStyle?: "default" | "avatar";
 }
@@ -19,6 +22,7 @@ export function ModularBeanHead({
   eyeAnimation = "none",
   mouthAnimation = "none",
   expressionAnimation = "none",
+  emoteType = "none",
   className,
   containerStyle = "default"
 }: ModularBeanHeadProps) {
@@ -26,6 +30,7 @@ export function ModularBeanHead({
   const eyeState = useEyeAnimation(eyeAnimation);
   const mouthState = useMouthAnimation(mouthAnimation);
   const expressionState = useExpressionAnimation(expressionAnimation);
+  const emoteConfig = useEmote(emoteType, expressionAnimation);
   
   // Merge the current states with avatar props
   const currentAvatarProps = useMemo(() => {
@@ -72,11 +77,14 @@ export function ModularBeanHead({
               <BeanHead {...currentAvatarProps} />
             </g>
           </svg>
+          <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+            <EmoteComponent emoteType={emoteType} emoteConfig={emoteConfig} />
+          </div>
         </div>
       </div>
     );
   }
-  
+
   // Default style used in CharacterSelectionPage
   return (
     <div className={cn("relative", className)}>
@@ -86,6 +94,9 @@ export function ModularBeanHead({
       >
         <BeanHead {...currentAvatarProps} />
       </svg>
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <EmoteComponent emoteType={emoteType} emoteConfig={emoteConfig} />
+      </div>
     </div>
   );
 } 
