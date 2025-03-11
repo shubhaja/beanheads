@@ -5,6 +5,7 @@ import { ExpressionAnimationType } from "./useExpressionAnimation";
 export type EmoteType = 
   | "sleep"
   | "surprise"
+  | "question"
   | "none";
 
 // Define emote configuration
@@ -12,6 +13,7 @@ export interface EmoteConfig {
   showEmote: boolean;
   zDelay?: number; // Specific to ZZZ emote
   surpriseDelay?: number; // Specific to surprise emote
+  questionDelay?: number; // Specific to question emote
 }
 
 export function useEmote(
@@ -25,7 +27,8 @@ export function useEmote(
   const [emoteConfig, setEmoteConfig] = useState<EmoteConfig>({
     showEmote: emoteType !== "none" || shouldShowSleepEmote,
     zDelay: (emoteType === "sleep" || shouldShowSleepEmote) ? 0.2 : undefined,
-    surpriseDelay: emoteType === "surprise" ? 0.1 : undefined
+    surpriseDelay: emoteType === "surprise" ? 0.1 : undefined,
+    questionDelay: emoteType === "question" ? 0.1 : undefined
   });
   
   const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
@@ -51,7 +54,8 @@ export function useEmote(
     setEmoteConfig({
       showEmote: emoteType !== "none" || shouldShowSleepEmote,
       zDelay: (emoteType === "sleep" || shouldShowSleepEmote) ? 0.2 : undefined,
-      surpriseDelay: emoteType === "surprise" ? 0.1 : undefined
+      surpriseDelay: emoteType === "surprise" ? 0.1 : undefined,
+      questionDelay: emoteType === "question" ? 0.1 : undefined
     });
     
     // Clean up previous timeouts

@@ -2,6 +2,7 @@ import React from 'react';
 import { EmoteType, EmoteConfig } from '../../hooks/useEmote';
 import { ZzzComponent } from './ZzzComponent';
 import { SurpriseComponent } from './SurpriseComponent';
+import { QuestionMarkComponent } from './QuestionMarkComponent';
 
 interface EmoteComponentProps {
   emoteType: EmoteType;
@@ -22,6 +23,10 @@ export function EmoteComponent({ emoteType, emoteConfig }: EmoteComponentProps) 
   
   if (emoteType === 'surprise' && emoteConfig.surpriseDelay !== undefined) {
     return <SurpriseComponent showSurprise={true} surpriseDelay={emoteConfig.surpriseDelay} />;
+  }
+
+  if (emoteType === 'question' && emoteConfig.questionDelay !== undefined) {
+    return <QuestionMarkComponent showQuestion={true} questionDelay={emoteConfig.questionDelay} />;
   }
   
   return null;

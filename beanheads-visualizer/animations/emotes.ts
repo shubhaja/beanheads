@@ -2,6 +2,7 @@
 export const emoteDisplayNames = {
   sleep: "Sleep (ZZZ)",
   surprise: "Surprise (!)",
+  question: "Question (?)",
   none: "None"
 };
 
