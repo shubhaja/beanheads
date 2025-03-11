@@ -41,8 +41,6 @@ import { SeriousEyebrows } from './eyebrows/SeriousEyebrows'
 import { RoundGlasses } from './accessories/RoundGlasses'
 import { AngryEyebrows } from './eyebrows/AngryEyebrows'
 import { StubbleBeard } from './facialHair/Stubble'
-import { RedwoodGraphic } from './clothingGraphic/Redwood'
-import { GatsbyGraphic } from './clothingGraphic/Gatsby'
 import * as Dress from './clothing/Dress'
 
 import { SquintEyes } from './eyes/SquintEyes'
@@ -50,16 +48,13 @@ import { ConcernedEyebrows } from './eyebrows/ConcernedEyebrows'
 import { Shades } from './accessories/Shades'
 import { TankTop } from './clothing/TankTop'
 import { SimpleEyes } from './eyes/SimpleEyes'
-import { Vue as VueGraphics } from './clothingGraphic/Vue'
 import { DizzyEyes } from './eyes/DizzyEyes'
 import { WinkEyes } from './eyes/Wink'
 import { HeartEyes } from './eyes/HeartEyes'
 import { OpenMouth } from './mouths/OpenMouth'
 import { SeriousMouth } from './mouths/SeriousMouth'
-import { ReactGraphic } from './clothingGraphic/React'
 import { TinyGlasses } from './accessories/TinyGlasses'
 import { VNeck } from './clothing/VNeck'
-import { GraphQLGraphic } from './clothingGraphic/GraphQL'
 import { Tongue } from './mouths/Tongue'
 import { DressShirt } from './clothing/DressShirt'
 
@@ -131,11 +126,6 @@ export const accessoryMap = {
 
 export const graphicsMap = {
   none: Noop,
-  redwood: RedwoodGraphic,
-  gatsby: GatsbyGraphic,
-  vue: VueGraphics,
-  react: ReactGraphic,
-  graphQL: GraphQLGraphic,
 }
 
 export const hatMap = {
