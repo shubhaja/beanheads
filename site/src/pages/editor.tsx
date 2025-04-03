@@ -23,7 +23,7 @@ import {
   hatMap,
   graphicsMap,
   theme,
-} from 'beanheads'
+} from '../../../core/src'
 import { Download, Code, Image, ArrowLeft, RefreshCw } from 'react-feather'
 import { SEO } from '../components/SEO'
 import { getRandomOptions } from '../utils/getRandomOptions'
@@ -105,7 +105,7 @@ function Editor({ location }: { location: Location }) {
     [props],
   )
 
-  const reactCode = `import { BeanHead } from 'beanheads'
+  const reactCode = `import { BeanHead } from '../../../core/src'
 
 const Example = () => (
   <BeanHead

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback, useMemo } from 'react'
 import qs from 'query-string'
 import { Link } from 'gatsby'
-import { BeanHead } from 'beanheads'
+import { BeanHead } from '../../../core/src'
 import { useInView } from 'react-intersection-observer'
 
 import { Hero } from '../components/Hero'
