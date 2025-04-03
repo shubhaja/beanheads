@@ -24,7 +24,7 @@ import {
   graphicsMap,
   theme,
 } from '../../../core/src'
-import { Download, Code, Image, ArrowLeft, RefreshCw } from 'react-feather'
+import { Download, ArrowLeft, RefreshCw } from 'react-feather'
 import { SEO } from '../components/SEO'
 import { getRandomOptions } from '../utils/getRandomOptions'
 
