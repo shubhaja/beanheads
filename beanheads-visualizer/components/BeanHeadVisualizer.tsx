@@ -158,7 +158,8 @@ const expressionAnimationOptions = [
   { value: "shockedTalk", label: "Shocked (Talking)" },
 ];
 
-const BeanHeadVisualizer = () => {
+// Export the component directly - no Next.js dependencies needed
+export const BeanHeadVisualizer = () => {
   const [options, setOptions] = useState<AvatarProps>(getRandomOptions());
   const [eyeAnimation, setEyeAnimation] = useState<EyeAnimationType>("none");
   const [mouthAnimation, setMouthAnimation] = useState<MouthAnimationType>("none");
@@ -418,4 +419,5 @@ const Avatar = () => (
   );
 };
 
+// Also export as default for backward compatibility
 export default BeanHeadVisualizer; 
