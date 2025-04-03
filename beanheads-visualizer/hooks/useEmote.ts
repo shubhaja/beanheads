@@ -38,13 +38,6 @@ export function useEmote(
     timeoutsRef.current.forEach((timeout) => clearTimeout(timeout));
     timeoutsRef.current = [];
   };
-  
-  // Add a timeout and store its reference for cleanup
-  const addTimeout = (callback: () => void, ms: number) => {
-    const timeoutId = setTimeout(callback, ms);
-    timeoutsRef.current.push(timeoutId);
-    return timeoutId;
-  };
 
   useEffect(() => {
     // Determine if we should show the sleep emote based on expression type

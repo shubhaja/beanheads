@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { BeanHead, AvatarProps, theme } from 'beanheads';
+import { AvatarProps, theme } from 'beanheads';
 import {
   eyesMap,
   eyebrowsMap,

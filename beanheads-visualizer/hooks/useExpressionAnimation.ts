@@ -227,7 +227,6 @@ const expressions: Record<string, ExpressionState> = {
 export function useExpressionAnimation(animationType: ExpressionAnimationType = "none"): ExpressionState {
   const [expressionState, setExpressionState] = useState<ExpressionState>(expressions.neutral);
   const timeoutRefs = useRef<NodeJS.Timeout[]>([]);
-  const isFirstRender = useRef<boolean>(true);
   const finalExpressionRef = useRef<ExpressionState | null>(null);
   const isTalkingRef = useRef<boolean>(false);
   const talkingIntervalRef = useRef<NodeJS.Timeout | null>(null);
