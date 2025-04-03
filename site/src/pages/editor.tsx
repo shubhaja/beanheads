@@ -150,9 +150,9 @@ const Example = () => (
             <Avatar
               ref={svgRef}
               {...props}
-              lashes={props.lashes === 'true' ? true : false}
-              mask={props.mask === 'true' ? true : false}
-              faceMask={props.faceMask === 'true' ? true : false}
+              lashes={typeof props.lashes === 'string' ? props.lashes === 'true' : Boolean(props.lashes)}
+              mask={typeof props.mask === 'string' ? props.mask === 'true' : Boolean(props.mask)}
+              faceMask={typeof props.faceMask === 'string' ? props.faceMask === 'true' : Boolean(props.faceMask)}
             />
           </div>
 
