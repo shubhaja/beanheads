@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { AvatarProps, theme } from 'beanheads';
+import { AvatarProps, theme } from '../../core/src';
 import {
   eyesMap,
   eyebrowsMap,
@@ -11,7 +11,7 @@ import {
   graphicsMap,
   hatMap,
   bodyMap,
-} from 'beanheads';
+} from '../../core/src';
 import { ModularBeanHead } from './ModularBeanHead';
 import { EyeAnimationType } from '../hooks/useEyeAnimation';
 import { MouthAnimationType } from '../hooks/useMouthAnimation';
@@ -168,7 +168,7 @@ const BeanHeadVisualizer = () => {
   
   // Generate React code based on current props
   useMemo(() => {
-    const code = `import { BeanHead } from 'beanheads';
+    const code = `import { BeanHead } from '../../core/src';
 
 const Avatar = () => (
   <BeanHead

@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { BeanHead, AvatarProps } from "beanheads";
+import { BeanHead, AvatarProps } from "../../core/src";
 import { cn } from "../utils/cn";
 import { useEyeAnimation, EyeAnimationType } from "../hooks/useEyeAnimation";
 import { useMouthAnimation, MouthAnimationType } from "../hooks/useMouthAnimation";

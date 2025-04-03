@@ -1,4 +1,4 @@
-import { AvatarProps } from 'beanheads';
+import { AvatarProps } from '../../core/src';
 
 // Types for animation system
 export type AnimationUpdateFn = (
