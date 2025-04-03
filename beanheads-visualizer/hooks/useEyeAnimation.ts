@@ -64,7 +64,7 @@ export function useEyeAnimation(animationType: EyeAnimationType = "none"): EyeSt
       };
       
       // Initial delay before starting the animation
-      const initialDelay = addTimeout(() => {
+      addTimeout(() => {
         // Initial blink cycle
         performBlinkCycle();
         
@@ -123,7 +123,7 @@ export function useEyeAnimation(animationType: EyeAnimationType = "none"): EyeSt
       setEyeState("leftTwitch");
       
       // Initial delay before first cycle
-      const initialDelay = addTimeout(() => {
+      addTimeout(() => {
         // Initial cycle
         performNormalMomentCycle();
         

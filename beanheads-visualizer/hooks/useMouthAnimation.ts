@@ -45,7 +45,7 @@ export function useMouthAnimation(animationType: MouthAnimationType = "none"): M
       };
       
       // Start the animation after a short delay
-      const initialDelay = addTimeout(() => {
+      addTimeout(() => {
         animateMouth();
       }, 200);
     }
@@ -62,7 +62,7 @@ export function useMouthAnimation(animationType: MouthAnimationType = "none"): M
       };
       
       // Start the animation after a short delay
-      const initialDelay = addTimeout(() => {
+      addTimeout(() => {
         animateMouth();
       }, 200);
     }
@@ -79,7 +79,7 @@ export function useMouthAnimation(animationType: MouthAnimationType = "none"): M
       };
       
       // Start the animation after a short delay
-      const initialDelay = addTimeout(() => {
+      addTimeout(() => {
         animateMouth();
       }, 200);
     }
