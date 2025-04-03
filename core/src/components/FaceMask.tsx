@@ -1,4 +1,3 @@
-import React from 'react'
 import { useTheme } from '../themeContext'
 import { colors as themeColors } from '../theme'
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import { useTheme } from '../../themeContext'
 import { EyeProps } from './types'
 import { LeftLash } from './Lashes'

@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect } from 'react';
 import { BeanHead } from '../../../core/src'
 
 export function SlotMachine({

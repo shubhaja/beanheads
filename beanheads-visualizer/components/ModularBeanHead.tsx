@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from 'react';
 import { BeanHead, AvatarProps } from "beanheads";
 import { cn } from "../utils/cn";
 import { useEyeAnimation, EyeAnimationType } from "../hooks/useEyeAnimation";

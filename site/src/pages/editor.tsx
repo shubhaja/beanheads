@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo, useRef } from 'react'
+import { useState, useCallback, useMemo, useRef } from 'react';
 import qs from 'query-string'
 import startCase from 'lodash/startCase'
 import { Link, navigate } from 'gatsby'

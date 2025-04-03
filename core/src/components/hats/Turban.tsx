@@ -1,4 +1,3 @@
-import React from 'react'
 import { useTheme } from '../../themeContext'
 import { ClothingProps } from '../clothing/types'
 import { HatProps } from './types'

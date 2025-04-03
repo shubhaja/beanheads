@@ -1,4 +1,3 @@
-import React from 'react'
 import { useTheme } from '../../themeContext'
 import { ClothingProps } from './types'
 import { Noop } from '../../utils/Noop'

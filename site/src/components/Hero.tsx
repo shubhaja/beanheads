@@ -1,4 +1,3 @@
-import React from 'react'
 import { GitHub, Twitter, Coffee } from 'react-feather'
 
 export function Hero() {

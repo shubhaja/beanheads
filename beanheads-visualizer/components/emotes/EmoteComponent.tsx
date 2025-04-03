@@ -1,4 +1,3 @@
-import React from 'react';
 import { EmoteType, EmoteConfig } from '../../hooks/useEmote';
 import { ZzzComponent } from './ZzzComponent';
 import { SurpriseComponent } from './SurpriseComponent';

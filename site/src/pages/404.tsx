@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'gatsby'
 import { BeanHead } from '../../../core/src'
 import { SEO } from '../components/SEO'
