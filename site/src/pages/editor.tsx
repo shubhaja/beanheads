@@ -62,7 +62,7 @@ function Editor({ location }: { location: Location }) {
   )
 
   const updateProp = useCallback(
-    e => {
+    (e: React.ChangeEvent<HTMLSelectElement>) => {
       const name = e.target.name
       const value = e.target.value
 
@@ -150,9 +150,9 @@ const Example = () => (
             <Avatar
               ref={svgRef}
               {...props}
-              lashes={props.lashes === 'true'}
-              mask={props.mask === 'true'}
-              faceMask={props.faceMask === 'true'}
+              lashes={props.lashes === 'true' ? true : false}
+              mask={props.mask === 'true' ? true : false}
+              faceMask={props.faceMask === 'true' ? true : false}
             />
           </div>
 
