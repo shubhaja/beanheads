@@ -124,7 +124,7 @@ export function BeanAvatar({ className, ...props }: BeanAvatarProps = {}) {
           style={{ overflow: "visible" }}
         >
           <g transform="translate(40, 120) scale(0.75)">
-            <Avatar {...avatarProps} />
+            <Avatar {...(avatarProps as any)} />
           </g>
         </svg>
       </div>

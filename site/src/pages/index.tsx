@@ -77,7 +77,7 @@ const RandomAvatars = React.memo(
 )
 
 const Home = () => {
-  const onReachEnd = useCallback(page => {
+  const onReachEnd = useCallback((page: number) => {
     setPages(current => {
       if (page === current.length) {
         return [

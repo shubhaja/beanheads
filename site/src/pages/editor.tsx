@@ -80,7 +80,7 @@ function Editor({ location }: { location: Location }) {
     navigate(`/editor?${qs.stringify(getRandomOptions())}`)
   }, [])
 
-  const [activeTab, setActiveTab] = useState<'react' | 'img'>('react')
+  const [activeTab, _setActiveTab] = useState<'react' | 'img'>('react')
 
   const download = () => {
     if (!svgRef.current) return
